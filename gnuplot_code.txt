@@ -1,0 +1,16 @@
+#customize output 
+set terminal svg size 1000,800 enhanced fname 'Times-New-Roman'  fsize 15 butt solid 
+set output 'out.svg'   #labels and title 
+set xlabel 'Years ->' tc rgb '#21908d' 
+set ylabel 'number of Publications ->' tc rgb '#21908d' 
+set title 'Publications per year (up to 01/04/2020)' tc rgb '#21908d' 
+ #set range and spaces for x-axis and y-axis 
+set xrange [1915:2024] 
+set xtics 1915,10,2025 
+set yrange [0:400000] 
+set ytics 0,40000 
+#grid makes diagram easier to read 
+set grid 
+#customize bars 
+set style fill solid 0.5 set boxwidth 0.8 
+plot histogram plot  "data.txt" using 1:2 notitle with boxes linecolor rgb "#aadc32" 
